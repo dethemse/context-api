@@ -1,11 +1,11 @@
-import { Post } from '@/types/Post';
+'use client';
+
+import { usePosts } from '@/providers/PostProvider';
 import { PostCard } from './PostCard';
 
-type Props = {
-  posts: Post[];
-};
+export const PostList = () => {
+  const { posts } = usePosts();
 
-export const PostList = ({ posts }: Props) => {
   return (
     <div className="grid grid-cols-4 gap-12">
       {posts.map((post) => (
